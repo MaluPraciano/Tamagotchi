@@ -11,6 +11,17 @@ Com base nisso, vem as Funcialidades Principais, as features.
 - **Ações:** Alimentar, comer, brincar e dormir.
 - **Inventário:** Gerenciamento de itens via 'List'.
 - **Tratamento de Erros:** Exceções customizadas para ações inválidas (Alimentar pet dormindo).
+- 
+## Funcionalidades
+- **Menu inicial:** iniciar o jogo ou fechar.
+- **Criação do bichinho:** o jogador escolhe o nome e a espécie (Gato, Cachorro ou Coelho).
+- **Status do bichinho:** exibe Fome (saciado), Energia, Felicidade e Higiene, cada uma de 0 a 100.
+- **Alimentar:** aumenta a saciedade e gasta um pouco de energia.
+- **Controle dos valores:** as necessidades nunca passam de 100 nem ficam abaixo de 0.
+- **Tratamento de exceção:** exceção personalizada (`PetNaoEncontradoException`) quando se tenta agir sem ter um pet.
+- **Arquitetura em camadas:** pacotes `model`, `view`, `service`, `repository` e `exceptions`.
+- **POO aplicada:** classe abstrata `Necessidade` com subclasses (`Saciado`, `Energia`, `Felicidade`, `Higiene`), com herança, polimorfismo (`passarTurno()`), encapsulamento e composição.
+
 ## 🗂️ Diagrama de classes
 
 ```mermaid
