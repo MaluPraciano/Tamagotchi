@@ -9,8 +9,8 @@ O **Tamagotchi OO** é um bichinho virtual criado no Japão em 1996. Você adota
 Com base nisso, vem as Funcialidades Principais, as features.
 - **Gestão vital:** Controle de fome, energia e felicidade.
 - **Ações:** Alimentar, comer, brincar e dormir.
-- **Inventário:** Gerenciamento de itens via 'List'.
-- **Tratamento de Erros:** Exceções customizadas para ações inválidas (Alimentar pet dormindo).
+- **Inventário:** Gerenciamento de itens via 'List' e 'Set'.
+- **Tratamento de Erros:** Exceções customizadas para ações inválidas (PetSemFomeException).
 
 ## Funcionalidades
 - **Menu inicial:** iniciar o jogo ou fechar.
