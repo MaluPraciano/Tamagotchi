@@ -93,12 +93,14 @@ classDiagram
 
 ```mermaid
 flowchart TD
+main["📦 com.tamagotchi.main"]
 view["📦 com.tamagotchi.view"]
 service["📦 com.tamagotchi.service"]
 repository["📦 com.tamagotchi.repository"]
 model["📦 com.tamagotchi.model"]
 exception["📦 com.tamagotchi.exception"]
 
+main -->|<<use>> view
 view -->|<<use>>| service
 view -->|<<use>>| model
 view -->|<<use>>| exception
