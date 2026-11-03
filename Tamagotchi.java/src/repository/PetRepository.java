@@ -13,13 +13,8 @@ public class PetRepository {
 		return pets.get(0);
 	}
 	
-	public void findAll() {}
-	
 	public void create(String nome, String especie) {
 		Pet pet = new Pet(nome, especie);
 		pets.add(pet);
 	}
-	public void update() {}
-	public void delete() {}
-	
 }

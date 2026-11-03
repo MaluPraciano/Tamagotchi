@@ -46,6 +46,7 @@ public class Menu {
         scanner.close();
 	}
 	
+	@SuppressWarnings("resource")
 	public void game() {
 		Scanner scanner = new Scanner(System.in);
 		
@@ -90,6 +91,7 @@ public class Menu {
         
 	}
 	
+	@SuppressWarnings("resource")
 	public void loop() {
 		Pet pet = petRepository.find();
 		boolean jogando = true;

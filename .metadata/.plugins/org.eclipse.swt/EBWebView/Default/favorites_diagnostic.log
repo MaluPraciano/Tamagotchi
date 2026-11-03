@@ -66,3 +66,22 @@
 2026-11-03 01:45:11.294: [INFO] BookmarksLoadDropped droppedNodes=0
 2026-11-03 01:45:11.294: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
 2026-11-03 02:30:53.304: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 02:59:10.204: [INFO] CurrentProfilePath: C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 02:59:10.204: [INFO] Profiles total count: 1
+2026-11-03 02:59:10.204: [INFO] Profile: name=Perfil 1 path=C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-03T02:26:55.568Z
+2026-11-03 02:59:10.204: [INFO] LastUsedProfileDir: C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 02:59:10.204: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-03T02:26:55.568Z
+2026-11-03 02:59:10.204: [INFO] OnDoneLoading sync enabled: 0
+2026-11-03 02:59:10.204: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-03 02:59:10.204: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-03 02:59:10.204: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 03:08:17.677: [INFO] BookmarksSnapshot Shutdown total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-11-03 17:44:49.886: [INFO] CurrentProfilePath: C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 17:44:49.886: [INFO] Profiles total count: 1
+2026-11-03 17:44:49.887: [INFO] Profile: name=Perfil 1 path=C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-03T03:03:52.387Z
+2026-11-03 17:44:49.887: [INFO] LastUsedProfileDir: C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default
+2026-11-03 17:44:49.887: [INFO] MostRecentlyActiveProfile: name=Perfil 1 path=C:\Users\maria\eclipse-workspace\.metadata\.plugins\org.eclipse.swt\EBWebView\Default lastActive=2026-11-03T03:03:52.387Z
+2026-11-03 17:44:49.887: [INFO] OnDoneLoading sync enabled: 0
+2026-11-03 17:44:49.887: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-11-03 17:44:49.887: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-11-03 17:44:49.887: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

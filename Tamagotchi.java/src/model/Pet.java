@@ -1,7 +1,9 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Pet {
 	String nome;
@@ -11,11 +13,24 @@ public class Pet {
 	private final Higiene higiene = new Higiene();
 	private final Felicidade felicidade = new Felicidade();
 	private final List<Necessidade> necessidades = new ArrayList<>();
+	private final Set<String> inventario = new HashSet<>();
 	
 	public Pet(String nome, String especie) {
 		super();
 		this.nome = nome;
 		this.especie = especie;
+	}
+	
+	public void adicionarItem(String item) {
+		inventario.add(item);
+	}
+	
+	public Set<String> getInventario(){
+		return inventario;
+	}
+	
+	public List<Necessidade> getNecessidades() {
+		return necessidades;
 	}
 	
 	public String getNome() {
@@ -42,9 +57,7 @@ public class Pet {
 		return felicidade.getValor();
 	}
 
-	public List<Necessidade> getNecessidades() {
-		return necessidades;
-	}
+	
 		
 
 	@Override
