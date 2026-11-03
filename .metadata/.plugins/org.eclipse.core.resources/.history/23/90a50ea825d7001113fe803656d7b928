@@ -1,0 +1,7 @@
+package exceptions;
+
+public class PetSemFomeException {
+	public PetSemFomeException(String mensagem) {
+		super(mensagem);
+	}
+}

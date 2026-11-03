@@ -1,0 +1,100 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Pet {
+	String nome;
+	String especie;
+	private final Saciado saciado = new Saciado();
+	private final Energia energia = new Energia();
+	private final Higiene higiene = new Higiene();
+	private final Felicidade felicidade = new Felicidade();
+	private final List<Necessidade> necessidades = new ArrayList<>();
+	
+	public Pet(String nome, String especie) {
+		super();
+		this.nome = nome;
+		this.especie = especie;
+	}
+
+	@Override
+	public String toString() {
+		return "Pet [nome=" + nome + ", especie=" + especie + "]";
+	}
+	
+	
+	
+	public void passarTurno() {
+		for (Necessidade n: necessidades) {
+			n.passarTurno(); 
+		}
+	}
+	
+	protected Pet(String nome) {
+	this.nome = nome;
+	
+	necessidades.add(new Energia());
+	necessidades.add(new Saciado());
+	necessidades.add(new Felicidade());
+	necessidades.add(new Higiene());
+	 
+	}
+	
+	public void alimentar() {
+		saciado.aumentar(30);
+		
+	}
+	
+	public void brincar() {
+		energia.diminuir(20);
+		higiene.diminuir(20);
+		saciado.diminuir(20);
+		felicidade.aumentar(50);
+	}
+	
+	public void dormir() {
+		saciado.diminuir(30);
+		energia.aumentar(0);
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
+	public Saciado getSaciado() {
+		return saciado;
+	}
+
+	public Energia getEnergia() {
+		return energia;
+	}
+
+	public Higiene getHigiene() {
+		return higiene;
+	}
+
+	public Felicidade getFelicidade() {
+		return felicidade;
+	}
+
+	public List<Necessidade> getNecessidades() {
+		return necessidades;
+	}
+		
+	
+	
+}
+

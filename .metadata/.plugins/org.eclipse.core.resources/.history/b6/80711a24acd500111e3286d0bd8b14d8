@@ -1,0 +1,8 @@
+package service;
+
+public class PetService {
+	public void alimentar() throws PetNaoEncontradoException{
+		Pet pet = petRepository.find();
+		
+	}
+}

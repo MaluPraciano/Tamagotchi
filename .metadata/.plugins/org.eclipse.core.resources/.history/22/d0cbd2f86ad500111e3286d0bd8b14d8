@@ -1,0 +1,71 @@
+package view;
+
+import java.util.Scanner;
+
+public class Menu {
+
+	public static void start() {
+		Scanner scanner = new Scanner(System.in);
+		
+        System.out.println();
+        System.out.println("==============================");
+        System.out.println("         TAMAGOTCHI           ");
+        System.out.println("==============================");
+        System.out.println("  1 - Iniciar jogo");
+        System.out.println("  2 - Fechar jogo");
+        System.out.println("==============================");
+        System.out.print("Escolha uma opção: ");
+        
+        int opcao = scanner.nextInt();
+       
+        switch (opcao) {
+        	case 1: {
+        		Menu.game();
+        		break;
+        	}
+        	case 2: {
+        		System.out.println("FECHOU O JOGO");
+        		break;
+        	}
+        }
+        
+        scanner.close();
+	}
+	
+	public static void game() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println();
+		System.out.println("==============================");
+		System.out.println("       CRIE SEU BICHINHO      ");
+		System.out.println("==============================");
+		System.out.print("Digite o nome do bichinho: ");
+		String nome = scanner.nextLine();
+		
+		
+		System.out.println();
+		System.out.println("==============================");
+		System.out.println("       ESCOLHA A ESPÉCIE      ");
+		System.out.println("==============================");
+		System.out.println("  1 - Gato");
+		System.out.println("  2 - Cachorro");
+		System.out.println("  3 - Coelho");
+		System.out.println("==============================");
+		System.out.print("Escolha uma opção: ");
+		
+		String especie;
+		int opcaoEspecie = scanner.nextInt();
+		
+		switch (opcaoEspecie) {
+		    case 1 -> especie = "Gato";
+		    case 2 -> especie = "Cachorro";
+		    case 3 -> especie = "Coelho";
+		    default -> System.out.println("Opção inválida! Escolha de 1 a 3.");
+		}
+		
+		
+		
+        scanner.close();
+	}
+
+}

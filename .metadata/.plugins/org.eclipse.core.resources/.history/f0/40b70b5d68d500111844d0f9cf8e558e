@@ -1,0 +1,15 @@
+package repository;
+
+import java.util.ArrayList;
+
+public class Pet {
+	
+	List<Pet> pets = ArrayList<Pet>
+
+	public void find() {}
+	public void findAll() {}
+	public void create() {}
+	public void update() {}
+	public void delete() {}
+	
+}

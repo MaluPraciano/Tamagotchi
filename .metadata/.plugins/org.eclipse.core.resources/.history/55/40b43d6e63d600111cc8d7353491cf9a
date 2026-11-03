@@ -1,0 +1,17 @@
+package service;
+
+import model.Pet;
+import repository.PetRepository;
+
+public class PetService {
+	private PetRepository petRepository;
+	
+	public PetService(PetRepository petRepository) {
+		this.petRepository = petRepository;
+	}
+	public void alimentar() {
+		Pet pet = petRepository.find();
+		pet.alimentar();
+		pet.passarTurno();
+	}
+}

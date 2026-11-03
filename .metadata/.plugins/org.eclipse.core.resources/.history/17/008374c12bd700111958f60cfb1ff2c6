@@ -1,0 +1,8 @@
+package exceptions;
+
+public class PetSemSonoException extends Exception {
+	public PetSemSonoException(String mensagem) {
+		super(mensagem);
+	}
+
+}

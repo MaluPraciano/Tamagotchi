@@ -1,0 +1,57 @@
+package service;
+
+import model.Pet;
+import repository.PetRepository;
+import exceptions.PetEstaComEnergiaBaixaException;
+import exceptions.PetEstaLimpoException;
+import exceptions.PetNaoEncontradoException;
+import exceptions.PetSemFomeException;
+import exceptions.PetSemSonoException;
+
+public class PetService {
+	private PetRepository petRepository;
+	
+	public PetService(PetRepository petRepository) {
+		this.petRepository = petRepository;
+	}
+	
+	private Pet buscarPet() throws PetNaoEncontradoException {
+	    Pet pet = petRepository.find();
+	    if (pet == null) {
+	        throw new PetNaoEncontradoException("Crie um pet primeiro!");
+	    }
+	    return pet;
+	}
+	
+	public void alimentar() throws PetSemFomeException, PetNaoEncontradoException {
+		Pet pet = buscarPet();
+		if (pet.getSaciado() > 90) {
+			throw new PetSemFomeException("Pet já está saciado!");
+		}
+		pet.alimentar();
+		pet.passarTurno();
+	}
+	
+	public void brincar() throws PetEstaComEnergiaBaixaException, PetNaoEncontradoException {
+		Pet pet = buscarPet();
+		if (pet.getEnergia() < 30) {
+			throw new PetEstaComEnergiaBaixaException("Seu pet está sem energia para brincar");
+		}
+		pet.brincar();
+		pet.passarTurno();
+	}
+	
+	public void dormir() throws PetSemSonoException, PetNaoEncontradoException {
+		Pet pet = buscarPet();
+		if (pet.getEnergia() >= 90) {
+			throw new PetSemSonoException("Seu pet está com energia alta e não precisa dormir!");
+		}
+	}
+	
+	public void darBanho() throws PetEstaLimpoException, PetNaoEncontradoException {
+		Pet pet = buscarPet();
+		if (pet.getHigiene() >= 90) {
+			throw new PetEstaLimpoException("Seu pet já está limpo!");
+		}
+	} 
+}

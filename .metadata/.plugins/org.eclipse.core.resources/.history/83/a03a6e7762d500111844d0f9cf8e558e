@@ -1,0 +1,12 @@
+package view;
+
+public class Menu {
+
+	public static void start() {
+		System.out.println("MENUUU");
+	}
+	
+	public void outraCOisa() {
+	System.out.println("outra coisa");	
+	}
+}

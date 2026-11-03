@@ -1,0 +1,7 @@
+package exceptions;
+
+public class PetEstaLimpoException extends Exception {
+	public PetEstaLimpoException(String mensagem) {
+		super(mensagem);
+	}
+}

@@ -2,6 +2,12 @@ package view;
 
 import java.util.Scanner;
 
+import exceptions.OpcaoInvalidaException;
+import exceptions.PetEstaComEnergiaBaixaException;
+import exceptions.PetEstaLimpoException;
+import exceptions.PetNaoEncontradoException;
+import exceptions.PetSemFomeException;
+import exceptions.PetSemSonoException;
 import model.Pet;
 import repository.PetRepository;
 import service.PetService;
@@ -51,6 +57,8 @@ public class Menu {
 		String nome = scanner.nextLine();
 		
 		
+		String especie = null;
+		while(especie == null) {
 		System.out.println();
 		System.out.println("==============================");
 		System.out.println("       ESCOLHA A ESPÉCIE      ");
@@ -63,7 +71,7 @@ public class Menu {
 		
 		int opcaoEspecie = scanner.nextInt();
 		
-		String especie = switch (opcaoEspecie) {
+		especie = switch (opcaoEspecie) {
 		    case 1 -> especie = "Gato";
 		    case 2 -> especie = "Cachorro";
 		    case 3 -> especie = "Coelho";
@@ -72,6 +80,7 @@ public class Menu {
 	            yield null;
 	        }
 		};
+	}
 		
 		this.petRepository.create(nome, especie);
 		
@@ -88,15 +97,18 @@ public class Menu {
 		while(jogando) {
 		
 		Scanner scanner = new Scanner(System.in);
-		  System.out.println();
-	        System.out.println("==============================");
-	        System.out.println("     STATUS DO BICHINHO       ");
-	        System.out.println("==============================");
-	        System.out.println("  Fome:       " + pet.getSaciado());
-	        System.out.println("  Energia:    " + pet.getEnergia());
-	        System.out.println("  Felicidade: " + pet.getFelicidade());
-	        System.out.println("  Higiene:    " + pet.getHigiene());
-	        System.out.println("==============================");
+		  	System.out.println();
+		  	System.out.println("==============================");
+		  	System.out.println("     STATUS DO BICHINHO       ");
+		  	System.out.println("==============================");
+		  	System.out.println("  Nome:       " + pet.getNome());
+		  	System.out.println("  Espécie:    " + pet.getEspecie());
+		  	System.out.println();
+		  	System.out.println("  Fome:       " + pet.getSaciado());
+		  	System.out.println("  Energia:    " + pet.getEnergia());
+		  	System.out.println("  Felicidade: " + pet.getFelicidade());
+		  	System.out.println("  Higiene:    " + pet.getHigiene());
+		  	System.out.println("==============================");
 	        System.out.println();
 	        System.out.println("==============================");
 	        System.out.println("       ESCOLHA UMA AÇÃO       ");
@@ -111,17 +123,62 @@ public class Menu {
 	        
 	        int opcaoAcao = scanner.nextInt();
 	        
-	        switch(opcaoAcao) {
+	        try{
+	        	switch(opcaoAcao) {
 	        case 1: {
 	        		try {
 	        			petService.alimentar();
-	        		} catch(Exception e) {
-	        			System.out.printf(e.getMessage());
+	        		} catch(PetNaoEncontradoException e) {
+	        			System.out.println(e.getMessage());
+	        		} catch(PetSemFomeException e) {
+	        			System.out.println(e.getMessage());
 	        		}
 	        		
 	        		break;
 	        	}
+	       
+	        case 2: {
+	        		try {
+	        			petService.brincar();
+	        		} catch(PetEstaComEnergiaBaixaException e) {
+	        			System.out.println(e.getMessage());
+	        		} catch(PetNaoEncontradoException e) {
+	        			System.out.println(e.getMessage());
+	        		}
+	        		
+	        		break;
+	        	}
+	        case 3: {
+	        		try {
+	        			petService.dormir();
+	        		} catch(PetSemSonoException e) {
+	        			System.out.println(e.getMessage());
+	        		} catch(PetNaoEncontradoException e) {
+	        			System.out.println(e.getMessage());
+	        		}
+	        		break;
+	        	}
+	        case 4: {
+	        		try {
+	        			petService.darBanho();
+	        		} catch(PetEstaLimpoException e) {
+	        			System.out.println(e.getMessage());
+	        		} catch(PetNaoEncontradoException e) {
+	        			System.out.println(e.getMessage());
+	        		}
+	        		break;
+	        	}
+	        case 5: {
+	        	System.out.println("Você saiu do jogo!");
+	        	jogando = false;
+	        	break;
+	        	}
+	        default:
+	        	throw new OpcaoInvalidaException("Opção Inválida! Escolha de 1 até 5.");
 	        }
+		} catch (OpcaoInvalidaException e) {
+			System.out.println(e.getMessage());
+			}
 		}
 	}
 

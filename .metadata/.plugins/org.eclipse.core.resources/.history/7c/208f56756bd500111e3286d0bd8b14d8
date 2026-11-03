@@ -1,0 +1,37 @@
+package model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Pet {
+	String nome;
+	String especie;
+	
+	public Pet(String nome, String especie) {
+		super();
+		this.nome = nome;
+		this.especie = especie;
+	}
+		
+	//Pet tem necessidades...
+	// private final List<Necessidade> necessidades = new ArrayList<>();
+	
+	// percorre a lista e faz a execução personalizada
+	// public void passarTurno() {
+	//	for (Necessidade n: necessidades) {
+	//		n.passarTurno(); // cada uma reage do seu jeito
+	//	}
+	// }
+		
+	// protected Pet(String nome) {
+	//	this.nome = nome;
+	//	// o pet instancia as necessidades ao nascer
+	//	necessidades.add(new Energia());
+	//	necessidades.add(new Fome());
+	//	necessidades.add(new Felicidade());
+	//	necessidades.add(new Higiene());
+	// 
+	// }
+		
+}
+

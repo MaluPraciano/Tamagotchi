@@ -1,0 +1,26 @@
+package view;
+
+import java.util.Scanner;
+
+public class Menu {
+
+	public static void start() {
+		Scanner scanner = new Scanner(System.in);
+		
+        System.out.println();
+        System.out.println("==============================");
+        System.out.println("         TAMAGOTCHI           ");
+        System.out.println("==============================");
+        System.out.println("  1 - Iniciar jogo");
+        System.out.println("  2 - Fechar jogo");
+        System.out.println("==============================");
+        System.out.print("Escolha uma opção: ");
+        
+        int opcao = scanner.nextInt();
+        
+        System.out.println(opcao);
+        
+        scanner.close();
+	}
+
+}

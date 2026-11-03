@@ -73,6 +73,7 @@ public class Pet {
 	public void alimentar() {
 		saciado.aumentar(30);
 		energia.diminuir(10);
+		felicidade.aumentar(10);
 		
 	}
 	
@@ -86,14 +87,14 @@ public class Pet {
 	public void dormir() {
 		saciado.diminuir(30);
 		energia.aumentar(40);
+		higiene.diminuir(20);
 	}
 	
 	public void darBanho() {
 		higiene.aumentar(50);
+		felicidade.aumentar(10);
+		energia.aumentar(10);
 	}
-
-	
-	
 	
 }
 

@@ -1,0 +1,7 @@
+package exception;
+
+public class PetNaoEncontradoException extends Exception{
+	public PetNaoEncontrado(String mensagem) {
+		super(mensagem)
+	}
+}

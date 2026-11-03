@@ -1,0 +1,20 @@
+package Model;
+
+public abstract class Necessidade {
+	private final String nome;
+	private int valor;
+	
+	protected Necessidade(String nome, int valorInicial) {
+		this.nome = nome;
+		this.valor = valorInicial;
+	}
+	//Polimorfismo: a classes filhas que declara a regra do método abstrato
+	public abstract void passarTurno();
+	
+	//Dois métodos que mudam o valor da necessidade e garante q fique entre 0 e 100
+	public void aumentar(int qtd) { valor = Math.min(100, valor + qtd); }
+	public void diminuir(int qtd) { valor = Math.max(0, valor - qtd); }
+	
+	public String getNome() {return nome;}
+	public int getValor() {return valor;}
+}
