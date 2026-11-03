@@ -11,7 +11,7 @@ Com base nisso, vem as Funcialidades Principais, as features.
 - **Ações:** Alimentar, comer, brincar e dormir.
 - **Inventário:** Gerenciamento de itens via 'List'.
 - **Tratamento de Erros:** Exceções customizadas para ações inválidas (Alimentar pet dormindo).
-- 
+
 ## Funcionalidades
 - **Menu inicial:** iniciar o jogo ou fechar.
 - **Criação do bichinho:** o jogador escolhe o nome e a espécie (Gato, Cachorro ou Coelho).
