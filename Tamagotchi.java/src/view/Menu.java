@@ -1,0 +1,128 @@
+package view;
+
+import java.util.Scanner;
+
+import model.Pet;
+import repository.PetRepository;
+import service.PetService;
+
+public class Menu {
+	
+	private PetRepository petRepository = new PetRepository();
+	private PetService petService = new PetService(petRepository);
+
+	public void start() {
+		Scanner scanner = new Scanner(System.in);
+		
+        System.out.println();
+        System.out.println("==============================");
+        System.out.println("         TAMAGOTCHI           ");
+        System.out.println("==============================");
+        System.out.println("  1 - Iniciar jogo");
+        System.out.println("  2 - Fechar jogo");
+        System.out.println("==============================");
+        System.out.print("Escolha uma opção: ");
+        
+        int opcao = scanner.nextInt();
+       
+        switch (opcao) {
+        	case 1: {
+        		this.game();
+        		this.loop();
+        		break;
+        	}
+        	case 2: {
+        		System.out.println("FECHOU O JOGO");
+        		break;
+        	}
+        }
+        
+        scanner.close();
+	}
+	
+	public void game() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println();
+		System.out.println("==============================");
+		System.out.println("       CRIE SEU BICHINHO      ");
+		System.out.println("==============================");
+		System.out.print("Digite o nome do bichinho: ");
+		String nome = scanner.nextLine();
+		
+		
+		System.out.println();
+		System.out.println("==============================");
+		System.out.println("       ESCOLHA A ESPÉCIE      ");
+		System.out.println("==============================");
+		System.out.println("  1 - Gato");
+		System.out.println("  2 - Cachorro");
+		System.out.println("  3 - Coelho");
+		System.out.println("==============================");
+		System.out.print("Escolha uma opção: ");
+		
+		int opcaoEspecie = scanner.nextInt();
+		
+		String especie = switch (opcaoEspecie) {
+		    case 1 -> especie = "Gato";
+		    case 2 -> especie = "Cachorro";
+		    case 3 -> especie = "Coelho";
+	        default -> {
+	            System.out.println("Opção inválida! Escolha de 1 a 3.");
+	            yield null;
+	        }
+		};
+		
+		this.petRepository.create(nome, especie);
+		
+		Pet pet = this.petRepository.find();
+		System.out.println(pet);
+		
+        
+	}
+	
+	public void loop() {
+		Pet pet = petRepository.find();
+		boolean jogando = true;
+		
+		while(jogando) {
+		
+		Scanner scanner = new Scanner(System.in);
+		  System.out.println();
+	        System.out.println("==============================");
+	        System.out.println("     STATUS DO BICHINHO       ");
+	        System.out.println("==============================");
+	        System.out.println("  Fome:       " + pet.getSaciado());
+	        System.out.println("  Energia:    " + pet.getEnergia());
+	        System.out.println("  Felicidade: " + pet.getFelicidade());
+	        System.out.println("  Higiene:    " + pet.getHigiene());
+	        System.out.println("==============================");
+	        System.out.println();
+	        System.out.println("==============================");
+	        System.out.println("       ESCOLHA UMA AÇÃO       ");
+	        System.out.println("==============================");
+	        System.out.println("  1 - Alimentar");
+	        System.out.println("  2 - Brincar");
+	        System.out.println("  3 - Dormir");
+	        System.out.println("  4 - Dar banho");
+	        System.out.println("  5 - Sair");
+	        System.out.println("==============================");
+	        System.out.print("Escolha uma opção: ");
+	        
+	        int opcaoAcao = scanner.nextInt();
+	        
+	        switch(opcaoAcao) {
+	        case 1: {
+	        		try {
+	        			petService.alimentar();
+	        		} catch(Exception e) {
+	        			System.out.printf(e.getMessage());
+	        		}
+	        		
+	        		break;
+	        	}
+	        }
+		}
+	}
+
+}
