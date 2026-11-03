@@ -100,7 +100,7 @@ repository["📦 com.tamagotchi.repository"]
 model["📦 com.tamagotchi.model"]
 exception["📦 com.tamagotchi.exception"]
 
-main -->|<<use>> view
+main -->|<<use>>| view
 view -->|<<use>>| service
 view -->|<<use>>| model
 view -->|<<use>>| exception
